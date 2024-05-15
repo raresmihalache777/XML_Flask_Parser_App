@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Events - My App{% endblock %}
+
+{% block content %}
+    <h1>View XML File</h1>
+    {% if working_filetype == 'json' %}
+        <p>Working file type is JSON. View the file <a href="">here</a>.</p>
+    {% else %}
+        <pre>{{ xml_content }}</pre>
+    {% endif %}
+{% endblock %}

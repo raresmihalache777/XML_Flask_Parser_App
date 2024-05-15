@@ -1,0 +1,173 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My App{% endblock %}</title>
+    <!-- Add your CSS links here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        form input[type="file"] {
+            margin-bottom: 10px;
+        }
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        /* Header styles */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Navigation links */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .event-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .event-table th, .event-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .event-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .event-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .filter-panel {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .filter-panel input[type="text"],
+    .filter-panel select,
+    .filter-panel input[type="date"] {
+        width: calc(25% - 10px); /* Adjust width as needed */
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    .filter-panel input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .filter-panel input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    /* Styles for the event table */
+    .event-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .event-table th,
+    .event-table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .event-table th {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    .event-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .event-table tbody tr:hover {
+        background-color: #ddd;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>My App</h1>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/events">View XML</a>
+            <a href="/eventsXSL">View XML using XSL</a>
+            <a href="/json-events">View JSON</a>
+            <a href="/upload">Upload</a>
+        </div>
+    </div>
+
+    <!-- Main content area -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Add footer content if needed -->
+    </footer>
+
+    <!-- Add your JavaScript links here -->
+</body>
+</html>

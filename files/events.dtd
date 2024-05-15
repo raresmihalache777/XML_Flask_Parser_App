@@ -1,0 +1,24 @@
+<!DOCTYPE events[
+    <!ELEMENT events (event+)>
+    <!ELEMENT event (date, id, time, duration, type, attendees, cateringCompany, clientName, phone, menu, pricing, notes)>
+    <!ELEMENT date (#PCDATA)>
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT time (#PCDATA)>
+    <!ELEMENT duration (#PCDATA)>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT attendees (#PCDATA)>
+    <!ELEMENT cateringCompany (#PCDATA)>
+    <!ELEMENT clientName (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+    <!ELEMENT menu (appetizer, mainCourse, dessert)>
+    <!ELEMENT appetizer (dish+)>
+    <!ELEMENT mainCourse (dish+)>
+    <!ELEMENT dessert (dish+)>
+    <!ELEMENT dish (#PCDATA)>
+    <!ELEMENT pricing (price, upfrontPayment, deadline)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT upfrontPayment (#PCDATA)>
+    <!ELEMENT deadline (#PCDATA)>
+    <!ATTLIST event status CDATA "contract">
+]>
+

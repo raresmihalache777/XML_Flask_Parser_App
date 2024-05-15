@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE events SYSTEM "C:\Users\Administrator\OneDrive\Desktop\ProiectXML\files\events.dtd">
+<events>
+  <event status="contract-signed">
+    <id>1</id>
+    <date>2024-05-15</date>
+    <time>18:00</time>
+    <duration>4</duration>
+    <type>Corporate</type>
+    <attendees>100</attendees>
+    <cateringCompany>Ace Catering</cateringCompany>
+    <clientName>XYZ Corporation</clientName>
+    <phone>123-456-7890</phone>
+    <menu>
+      <appetizer>
+        <dish>Caprese Salad</dish>
+      </appetizer>
+      <mainCourse>
+        <dish>Grilled Chicken with Roasted Vegetables</dish>
+      </mainCourse>
+      <dessert>
+        <dish>Chocolate Fondant</dish>
+      </dessert>
+    </menu>
+    <pricing>
+      <price>$50 per person</price>
+      <upfrontPayment>$1000</upfrontPayment>
+      <deadline>2024-04-15</deadline>
+    </pricing>
+    <notes>Vegetarian options required for some attendees.</notes>
+  </event>
+  <event status="payment-sent">
+      <id>2</id>
+    <date>2024-11-10</date>
+    <time>17:30</time>
+    <duration>4</duration>
+    <type>Personal</type>
+    <attendees>60</attendees>
+    <cateringCompany>Delicious Delights</cateringCompany>
+    <clientName>John Smith</clientName>
+    <phone>987-654-3210</phone>
+    <menu>
+      <appetizer>
+        <dish>Caesar Salad</dish>
+      </appetizer>
+      <mainCourse>
+        <dish>Grilled Salmon with Asparagus</dish>
+      </mainCourse>
+      <dessert>
+        <dish>Apple Pie</dish>
+      </dessert>
+    </menu>
+    <pricing>
+      <price>$55 per person</price>
+      <upfrontPayment>$1100</upfrontPayment>
+      <deadline>2024-10-25</deadline>
+    </pricing>
+    <notes>No specific dietary requirements.</notes>
+  </event>
+  <event status="contract-signed">
+    <id>3</id>
+    <date>2024-12-05</date>
+    <time>19:00</time>
+    <duration>3</duration>
+    <type>Corporate</type>
+    <attendees>85</attendees>
+    <cateringCompany>Supreme Caterers</cateringCompany>
+    <clientName>ABC Corporation</clientName>
+    <phone>555-555-5555</phone>
+    <menu>
+      <appetizer>
+        <dish>Spinach Artichoke Dip</dish>
+      </appetizer>
+      <mainCourse>
+        <dish>Beef Stroganoff</dish>
+      </mainCourse>
+      <dessert>
+        <dish>Lemon Sorbet</dish>
+      </dessert>
+    </menu>
+    <pricing>
+      <price>$60 per person</price>
+      <upfrontPayment>$1500</upfrontPayment>
+      <deadline>2024-11-20</deadline>
+    </pricing>
+    <notes>Gluten-free options needed.</notes>
+  </event>
+  <event status="contract-signed">
+    <id>4</id>
+    <date>2024-12-20</date>
+    <time>18:30</time>
+    <duration>5</duration>
+    <type>Personal</type>
+    <attendees>45</attendees>
+    <cateringCompany>Taste of Home Catering</cateringCompany>
+    <clientName>Jane Doe</clientName>
+    <phone>222-333-4444</phone>
+    <menu>
+      <appetizer>
+        <dish>Cheese Platter</dish>
+      </appetizer>
+      <mainCourse>
+        <dish>Vegetable Lasagna</dish>
+      </mainCourse>
+      <dessert>
+        <dish>Chocolate Mousse</dish>
+      </dessert>
+    </menu>
+    <pricing>
+      <price>$45 per person</price>
+      <upfrontPayment>$1000</upfrontPayment>
+      <deadline>2024-12-10</deadline>
+    </pricing>
+    <notes>No nuts or dairy in dishes.</notes>
+  </event>
+  <event status="payment-received">
+    <id>5</id> 
+    <date>2025-01-10</date>
+    <time>17:00</time>
+    <duration>4</duration>
+    <type>Corporate</type>
+    <attendees>110</attendees>
+    <cateringCompany>Exquisite Events Catering</cateringCompany>
+    <clientName>Big Enterprises</clientName>
+    <phone>777-888-9999</phone>
+    <menu>
+      <appetizer>
+        <dish>Stuffed Peppers</dish>
+      </appetizer>
+      <mainCourse>
+        <dish>Chicken Marsala</dish>
+      </mainCourse>
+      <dessert>
+        <dish>Strawberry Shortcake</dish>
+      </dessert>
+    </menu>
+    <pricing>
+      <price>$65 per person</price>
+      <upfrontPayment>$1300</upfrontPayment>
+      <deadline>2024-12-25</deadline>
+    </pricing>
+    <notes>No shellfish due to allergies.</notes>
+  </event>
+  <event status="contract-signed">
+    <id>6</id>
+    <date>2025-02-15</date>
+    <time>18:00</time>
+    <duration>3</duration>
+    <type>Personal</type>
+    <attendees>25</attendees>
+    <cateringCompany>Family Recipes Catering</cateringCompany>
+    <clientName>Emily Smith</clientName>
+    <phone>666-666-6666</phone>
+    <menu>
+      <appetizer>
+        <dish>Bruschetta</dish>
+      </appetizer>
+      <mainCourse>
+        <dish>Pasta Primavera</dish>
+      </mainCourse>
+      <dessert>
+        <dish>Tiramisu</dish>
+      </dessert>
+    </menu>
+    <pricing>
+      <price>$40 per person</price>
+      <upfrontPayment>$800</upfrontPayment>
+      <deadline>2025-02-05</deadline>
+    </pricing>
+    <notes>No specific dietary requirements.</notes>
+  </event>
+</events>

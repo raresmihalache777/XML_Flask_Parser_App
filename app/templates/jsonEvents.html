@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Events - My App{% endblock %}
+
+{% block content %}
+    <h1>Events</h1>
+    <table class="event-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Duration</th>
+                <th>Type</th>
+                <th>Attendees</th>
+                <th>Catering Company</th>
+                <th>Client Name</th>
+                <th>Phone</th>
+                <th>Menu</th>
+                <th>Pricing</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.status }}</td>
+                <td>{{ event.date }}</td>
+                <td>{{ event.time }}</td>
+                <td>{{ event.duration }}</td>
+                <td>{{ event.type }}</td>
+                <td>{{ event.attendees }}</td>
+                <td>{{ event.cateringCompany }}</td>
+                <td>{{ event.clientName }}</td>
+                <td>{{ event.phone }}</td>
+                <td>
+                    <ul>
+                        {% for course, dishes in event.menu.items() %}
+                            <li>{{ course }}:
+                                <ul>
+                                    {% for dish, description in dishes.items() %}
+                                        <li>{{ dish }}: {{ description }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for key, value in event.pricing.items() %}
+                            <li>{{ key }}: {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ event.notes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%endblock%}

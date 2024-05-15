@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="baseEventType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="date" type="xs:date"/>
+      <xs:element name="time" type="xs:string"/>
+      <xs:element name="duration" type="xs:integer"/>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="attendees" type="xs:integer"/>
+      <xs:element name="cateringCompany" type="xs:string"/>
+      <xs:element name="clientName" type="xs:string"/>
+      <xs:element name="phone" type="xs:string"/>
+      <xs:element name="menu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="appetizer">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="dish" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="mainCourse">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="dish" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dessert">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="dish" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pricing">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="price" type="positiveInteger"/>
+            <xs:element name="upfrontPayment" type="xs:string"/>
+            <xs:element name="deadline" type="xs:date"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="notes" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:simpleType name="eventCoordinatorType">
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Andrei Ion"/>
+        <xs:enumeration value="Vlad Popescu"/>
+      </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="positiveInteger">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="events">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="event" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="baseEventType">
+                <xs:sequence>
+                  <xs:element name="location" type="xs:string"/>
+                  <xs:element name="eventCoordinator" type="xs:string"/>
+                </xs:sequence>
+                <xs:attribute name="id" type="xs:string"/>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="status" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  
+
+</xs:schema>

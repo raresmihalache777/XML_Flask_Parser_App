@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block title %}Events - My App{% endblock %}
+
+{% block content %}
+<!-- Filtering Panel -->
+<div class="filter-panel">
+    <input type="text" id="clientName" placeholder="Client Name">
+    <select id="clientType">
+        <option value="">All</option>
+        <option value="Corporate">Corporate</option>
+        <option value="Personal">Personal</option>
+    </select>
+    <input type="date" id="startDate"> to <input type="date" id="endDate">
+    <button onclick="applyFilters()">Filter</button>
+    <button onclick="resetFilters()">Remove Filters</button>
+</div>
+<h1>Events</h1>
+{% if events %}
+<table class="event-table">
+    <thead>
+        <tr>
+            {% for key, value in events[0].items() %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+        <tr id="{{ event.id }}">
+            {% for key, value in event.items() %}
+                {% if key == 'pricing' %}
+                    <td>
+                        <ul>
+                            {% for sub_key, sub_value in value.items() %}
+                                <li><strong>{{ sub_key }}:</strong> {{ sub_value }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                {% elif key == 'menu'%}
+                    <td>
+                        <ul>
+                            {% for sub_key, sub_value in value.items() %}
+                            <li><strong>{{ sub_key }}:</strong>
+                                <ol>
+                                    {% for dish_key ,dish_value in sub_value.items() %}
+                                        <li>{{ dish_value }}</li>
+                                    {% endfor %}
+                                </ol>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </td>   
+                {% else %}
+                    <td>{{ value }}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    <p>No events found.</p>
+{%endif %}
+<h2>Validate using DTD</h2>
+<button onclick="validateXML()">Validate</button>
+<p id="dtd-response"></p>
+
+<!-- Scripts -->
+<script>
+    function deleteEvent(eventId) {
+        if (confirm("Are you sure you want to delete this event?")) {
+            fetch(`/delete_event/${eventId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("am primit raspuns")
+                    location.reload();
+                    return response.json();
+                }
+                throw new Error('Failed to delete event');
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        }
+    }
+
+    function applyFilters() {
+        var clientName = document.getElementById('clientName').value;
+        var clientType = document.getElementById('clientType').value;
+        var startDate = document.getElementById('startDate').value;
+        var endDate = document.getElementById('endDate').value;
+        console.log(clientName + ' ' + clientType + ' ' + startDate + ' ' + endDate)
+
+        window.location.replace('/events?'+'clientName='+clientName+'&clientType='+clientType+'&startDate='+startDate+'&endDate='+endDate);
+    }
+
+    function resetFilters() {
+        document.getElementById('clientName').value = '';
+        document.getElementById('clientType').value = '';
+        document.getElementById('startDate').value = '';
+        document.getElementById('endDate').value = '';
+        window.location.replace('/events')
+    }
+
+    function validateXML(xmlData) {
+    // Define the URL of the endpoint where XML validation will be performed
+    const url = '/validateXML';
+
+    // Define the request body with the XML data
+    const requestBody = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/xml'
+        }
+    };
+
+    // Make a POST request to the server
+    fetch(url, requestBody)
+        .then(response => {
+            // Check if the response is successful (status code 200)
+            if (response.ok) {
+                // Process the response data
+                return response.json(); // Assuming the server returns JSON data
+            } else {
+                // Handle errors
+                throw new Error('Failed to validate XML');
+            }
+        })
+        .then(data => {
+            // Handle the validated XML data
+            console.log('XML validated successfully:', data);
+            const dtdResponseElement = document.getElementById('dtd-response');
+            dtdResponseElement.textContent = data.message;
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error validating XML:', error);
+        });
+    }
+
+    window.onload = function() {
+        // Get URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Populate filter inputs if query parameters exist
+        const clientNameInput = document.getElementById('clientName');
+        if (urlParams.has('clientName')) {
+            clientNameInput.value = urlParams.get('clientName');
+        }
+
+        const clientTypeInput = document.getElementById('clientType');
+        if (urlParams.has('clientType')) {
+            clientTypeInput.value = urlParams.get('clientType');
+        }
+
+        const startDateInput = document.getElementById('startDate');
+        if (urlParams.has('startDate')) {
+            startDateInput.value = urlParams.get('startDate');
+        }
+
+        const endDateInput = document.getElementById('endDate');
+        if (urlParams.has('endDate')) {
+            endDateInput.value = urlParams.get('endDate');
+        }
+    };
+</script>
+
+{% endblock %}

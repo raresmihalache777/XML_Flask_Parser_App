@@ -1,0 +1,178 @@
+{
+  "events": [
+    { 
+      "id":1,
+      "status": "contract-signed",
+      "date": "2024-05-15",
+      "time": "18:00",
+      "duration": 4,
+      "type": "Corporate",
+      "attendees": 100,
+      "cateringCompany": "Ace Catering",
+      "clientName": "XYZ Corporation",
+      "phone": "123-456-7890",
+      "menu": {
+        "appetizer": {
+          "dish": ["Caprese Salad"]
+        },
+        "mainCourse": {
+          "dish": ["Grilled Chicken with Roasted Vegetables"]
+        },
+        "dessert": {
+          "dish": ["Chocolate Fondant"]
+        }
+      },
+      "pricing": {
+        "price": "$50 per person",
+        "upfrontPayment": "$1000",
+        "deadline": "2024-04-15"
+      },
+      "notes": "Vegetarian options required for some attendees."
+    },
+    {
+      "id":2,
+      "status": "payment-sent",
+      "date": "2024-11-10",
+      "time": "17:30",
+      "duration": 4,
+      "type": "Personal",
+      "attendees": 60,
+      "cateringCompany": "Delicious Delights",
+      "clientName": "John Smith",
+      "phone": "987-654-3210",
+      "menu": {
+        "appetizer": {
+          "dish": ["Caesar Salad"]
+        },
+        "mainCourse": {
+          "dish": ["Grilled Salmon with Asparagus"]
+        },
+        "dessert": {
+          "dish": ["Apple Pie"]
+        }
+      },
+      "pricing": {
+        "price": "$55 per person",
+        "upfrontPayment": "$1100",
+        "deadline": "2024-10-25"
+      },
+      "notes": "No specific dietary requirements."
+    },
+    {
+      "id":3,
+      "status": "contract-signed",
+      "date": "2024-12-05",
+      "time": "19:00",
+      "duration": 3,
+      "type": "Corporate",
+      "attendees": 85,
+      "cateringCompany": "Supreme Caterers",
+      "clientName": "ABC Corporation",
+      "phone": "555-555-5555",
+      "menu": {
+        "appetizer": {
+          "dish": ["Spinach Artichoke Dip"]
+        },
+        "mainCourse": {
+          "dish": ["Beef Stroganoff"]
+        },
+        "dessert": {
+          "dish": ["Lemon Sorbet"]
+        }
+      },
+      "pricing": {
+        "price": "$60 per person",
+        "upfrontPayment": "$1500",
+        "deadline": "2024-11-20"
+      },
+      "notes": "Gluten-free options needed."
+    },
+    {
+      "id":4,
+      "status": "contract-signed",
+      "date": "2024-12-20",
+      "time": "18:30",
+      "duration": 5,
+      "type": "Personal",
+      "attendees": 45,
+      "cateringCompany": "Taste of Home Catering",
+      "clientName": "Jane Doe",
+      "phone": "222-333-4444",
+      "menu": {
+        "appetizer": {
+          "dish": ["Cheese Platter"]
+        },
+        "mainCourse": {
+          "dish": ["Vegetable Lasagna"]
+        },
+        "dessert": {
+          "dish": ["Chocolate Mousse"]
+        }
+      },
+      "pricing": {
+        "price": "$45 per person",
+        "upfrontPayment": "$1000",
+        "deadline": "2024-12-10"
+      },
+      "notes": "No nuts or dairy in dishes."
+    },
+    {
+      "id":5,
+      "status": "payment-received",
+      "date": "2025-01-10",
+      "time": "17:00",
+      "duration": 4,
+      "type": "Corporate",
+      "attendees": 110,
+      "cateringCompany": "Exquisite Events Catering",
+      "clientName": "Big Enterprises",
+      "phone": "777-888-9999",
+      "menu": {
+        "appetizer": {
+          "dish": ["Stuffed Peppers"]
+        },
+        "mainCourse": {
+          "dish": ["Chicken Marsala"]
+        },
+        "dessert": {
+          "dish": ["Strawberry Shortcake"]
+        }
+      },
+      "pricing": {
+        "price": "$65 per person",
+        "upfrontPayment": "$1300",
+        "deadline": "2024-12-25"
+      },
+      "notes": "No shellfish due to allergies."
+    },
+    {
+      "id":6,
+      "status": "contract-signed",
+      "date": "2025-02-15",
+      "time": "18:00",
+      "duration": 3,
+      "type": "Personal",
+      "attendees": 25,
+      "cateringCompany": "Family Recipes Catering",
+      "clientName": "Emily Smith",
+      "phone": "666-666-6666",
+      "menu": {
+        "appetizer": {
+          "dish": ["Bruschetta"]
+        },
+        "mainCourse": {
+          "dish": ["Pasta Primavera"]
+        },
+        "dessert": {
+          "dish": ["Tiramisu"]
+        }
+      },
+      "pricing": {
+        "price": "$40 per person",
+        "upfrontPayment": "$800",
+        "deadline": "2025-02-05"
+      },
+      "notes": "No specific dietary requirements."
+    }
+  ]
+}
